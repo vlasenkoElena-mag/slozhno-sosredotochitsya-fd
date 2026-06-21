@@ -1,0 +1,41 @@
+.inline-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--main-color, #ff0070);
+}
+
+.inline-link:hover {
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
+}
+
+.inline-link:focus {
+  outline: none;
+}
+
+.inline-link:focus-visible {
+  outline: 1px solid var(--text-color, #f1b2ce);
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 1.5px 13px;
+  padding-bottom: 0;
+  color: var(--button-color, #ff0070);
+  text-transform: lowercase;
+  background: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-color, #ff0070);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(from var(--button-color, #ff0070) r g b / 50%);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--button-color, #ff0070);
+}

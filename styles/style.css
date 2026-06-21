@@ -1,5 +1,280 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+html {
+  font-size: 16px;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  color: var(--text-color, #f1b2ce);
+  font-family: var(--fonts), "Courier New", Courier, monospace;
+  font-size: var(--main-text-size, 18px);
+  line-height: 23.4px;
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+}
+
+.corner-frame::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-inline-end: 1px solid var(--button-color, #ff0070);
+  border-block-start: 1px solid var(--button-color, #ff0070);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.corner-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-inline-end: 1px solid var(--button-color, #ff0070);
+  border-block-start: 1px solid var(--button-color, #ff0070);
+  transform: rotate(180deg);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.status-mark {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: var(--display-rec);
+  color: var(--button-color, #ff0070);
+  text-transform: uppercase;
+}
+
+.status-mark::after {
+  content: "";
+  display: inline-block;
+  margin-inline: 9px;
+  margin-block-end: 2px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--button-color, #ff0070);
+  background-color: var(--button-color, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+/* header section */
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: 668px;
+  margin-block-end: 60px;
+}
+
+.theme-switcher__list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-self: start;
+  margin-top: var(--main-indent);
+}
+
+.hero-title {
+  color: var(--title-color, #db00ff);
+  font-size: var(
+    --header-title-size,
+    clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+  );
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--main-color, #ff0070);
+}
+
+.highlight-banner {
+  color: var(--subtitle-color, #000028);
+  font-weight: var(--font-weight-bold, 800);
+  background-color: var(--main-color, #ff0070);
+}
+
+.section-block {
+  position: relative;
+}
+
+.hero-deck {
+  justify-self: end;
+  align-self: center;
+  margin-inline-end: 20px;
+  margin-block-end: 1em;
+  inline-size: var(--header-paragraph-size, 48%);
+}
+
+/*main */
+
+.page-main {
+  margin: 0 var(--main-indent, 20px);
+}
+
+.intro-block {
+  display: grid;
+  grid-template-columns: 1fr 2.06fr;
+  grid-template-rows: repeat(3, auto);
+  gap: var(--main-indent, 20px);
+  margin-block-end: 60px;
+}
+
+.factors-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: fit-content 1fr;
+  gap: 20px;
+  margin-block-end: 80px;
+}
+
+.factors-block .section-heading {
+  grid-column: 1/-1;
+  max-width: 30%;
+}
+
+.factors-block > .info-card:nth-child(n + 2) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.factors-block .info-card .info-card__text:not(:first-child) {
+  margin-top: 10px;
+}
+
+.advice-block {
+  display: grid;
+  grid-template-columns: 1fr 2.06fr;
+  grid-template-rows: 1em repeat(3, auto);
+  gap: var(--main-indent, 20px);
+  margin-block-end: 80px;
+}
+
+.advice-block .section-heading {
+  grid-row: span 2;
+}
+
+.advice-block .info-card__title {
+  font-weight: 400;
+}
+
+.advice-block article {
+  margin-top: 1.5px;
+}
+
+.info-card {
+  grid-column: 2;
+}
+
+.section-heading {
+  color: var(--button-color);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--main-text-size);
+}
+
+.theme-light .section-heading {
+  color: var(--text-color);
+}
+
+.info-card__title {
+  --main-indent: 10px;
+  margin-block-end: var(--main-indent, 10px);
+  font-size: var(--main-text-size);
+}
+
+.advice-lead {
+  grid-column: 2;
+  align-self: start;
+  margin-block-end: var(--main-indent, 20px);
+  font-size: var(--main-text-size);
+}
+
+/* gallery section */
+
+.gallery-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-indent, 20px);
+}
+.gallery-heading {
+  font-size: var(--main-text-size);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "sunset sunset ice-cream"
+    "books tape ice-cream"
+    "books street street";
+  gap: var(--main-indent, 20px);
+}
+
+.gallery-cell {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-media {
+  display: block;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.gallery-cell:nth-child(2) {
+  grid-area: street;
+}
+
+.gallery-cell:nth-child(5) {
+  grid-area: tape;
+}
+
+.gallery-cell:nth-child(4) {
+  grid-area: sunset;
+}
+
+.gallery-cell:nth-child(1) {
+  grid-area: ice-cream;
+}
+
+.gallery-cell:nth-child(3) {
+  grid-area: books;
+}
+
+/* footer section */
+
+.footer {
+  position: relative;
+  display: grid;
+  align-content: center;
+  height: 100vh;
+  min-height: 668px;
+  margin-block-start: 60px;
+}
+
+.footer-brand {
+  color: var(--title-color, #db00ff);
+  font-size: var(
+    --header-title-size,
+    clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+  );
+  line-height: 0.825;
+  text-align: center;
+  text-shadow: 4px 4px 0 var(--main-color, #ff0070);
+}
+
+.inline-link,
+.header__theme-menu-button {
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.header__theme-menu-button:hover,
+.inline-link:hover {
+  opacity: 0.7;
 }
