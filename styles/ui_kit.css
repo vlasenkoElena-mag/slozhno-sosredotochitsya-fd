@@ -17,11 +17,13 @@
 
 .header__theme-menu-button {
   border: none;
+  cursor: pointer;
   padding: 1.5px 13px;
   padding-bottom: 0;
   color: var(--button-color, #ff0070);
   text-transform: lowercase;
   background: transparent;
+  border: 1px solid transparent;
 }
 
 .header__theme-menu-button_active {

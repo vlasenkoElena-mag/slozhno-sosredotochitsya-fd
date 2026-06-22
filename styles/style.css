@@ -1,7 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-html {
-  font-size: 16px;
-}
 
 .page {
   color: var(--text-color, #f1b2ce);
@@ -206,8 +203,8 @@ html {
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "sunset sunset ice-cream"
-    "books tape ice-cream"
-    "books street street";
+    "tape books ice-cream"
+    "tape street street";
   gap: var(--main-indent, 20px);
 }
 
